@@ -2,7 +2,7 @@
   "name": "konosublox-warm-disc-bot",
   "version": "1.0.0",
   "description": "A ?warm parody bot (on ?warn) for KonoSublox's Discord",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "discord.js": "^12.3.1"
   },
