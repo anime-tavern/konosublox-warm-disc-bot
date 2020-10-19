@@ -1,0 +1,23 @@
+{
+  "name": "konosublox-warm-disc-bot",
+  "version": "1.0.0",
+  "description": "A ?warm parody bot (on ?warn) for KonoSublox's Discord",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anime-tavern/konosublox-warm-disc-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anime-tavern/konosublox-warm-disc-bot/issues"
+  },
+  "homepage": "https://github.com/anime-tavern/konosublox-warm-disc-bot#readme"
+}
