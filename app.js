@@ -35,13 +35,30 @@ function getUserFromMention(mention) {
 
 /**
 * Gets a heat pun for the user
-* @param {DiscordUser}
+* @param {DiscordUser} speakingDiscordUser
+* @param {DiscordUser} targetDiscordUser
 * @returns {string}
 */
-function getHeatPun(discordUser){
-	const username = discordUser.username;
+function getHeatPun(speakingDiscordUser, targetDiscordUser){
+	const speakingUsername = speakingDiscordUser.username;
+	const targetUsername = targetDiscordUser.username;
 
-	return "";
+	const punOptions = [
+		`${targetUsername}, ready to be toasty?`,
+		`I like ya' cut, G.`,
+		`${speakingUsername} you idiot - you spelled warn wrong.`,
+		`Woah, imagine being a dumb moderator! Couldn't be you... ${speakingUsername}`,
+		`Open up! It's the grammar police ${speakingUsername}!`,
+		`Ya' like jazz, ${targetUsername}? Because I'm gonna slow roast you...`,
+		`Hey, ${targetUsername}, want a blanket or something?`,
+		`It's not that cold here. Go find your own bot.`,
+		`Sooooo, ${speakingUsername}, according to my calculations... you can't spell!`,
+		`Dangggg ${speakingUsername} it's ?warn. Use a different brain cell next time.`,
+		`I know it gets hard to spell sometimes, but it's okay ${speakingUsername}. I'm sure ${targetUsername} won't laugh.`,
+		`Oi, <@440645830379307018> - check out this mod lol. Using the wrong command.`,
+	];
+
+	return punOptions[Math.floor(Math.random() * punOptions.length)];
 }
 
 client.on("message", message => {
@@ -73,7 +90,7 @@ client.on("message", message => {
 
 				// Could be redefined by the pure-ID check, so check again if it is valid
 				if (user){
-					message.channel.send(getHeatPun(user));
+					message.channel.send(getHeatPun(message.author, user));
 				}else{
 					message.channel.send("Invalid user ID! Use their ID or a tag to warm them up :)");
 				}
